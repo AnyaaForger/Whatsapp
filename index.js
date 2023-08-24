@@ -10,7 +10,7 @@ const app = express().use(body_parser.json());
 const token = process.env.TOKEN;
 const mytoken = process.env.MYTOKEN;
 
-console.log(token + mytoken);
+// console.log(token + mytoken);
 
 app.listen(process.env.PORT, () =>{
     console.log("Jalannn...");
@@ -20,6 +20,8 @@ app.get("/webhook", (req,res)=>{
     let mode = req.query["hub.mode"];
     let challenge = req.query["hub.challenge"];
     let token = req.query["hub.verify_token"];
+
+    console.log(token);
 
     if(mode && token){
         if(mode === "subscribe" && token === mytoken){
