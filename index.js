@@ -10,6 +10,8 @@ const app = express().use(body_parser.json());
 const token = process.env.TOKEN;
 const mytoken = process.env.MYTOKEN;
 
+console.log(token + mytoken);
+
 app.listen(process.env.PORT, () =>{
     console.log("Jalannn...");
 });
